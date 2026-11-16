@@ -204,18 +204,22 @@ a { color: inherit; text-decoration: none; }
 .dots button { width: 28px; height: 2px; border: 0; background: #b3b9c1; }
 .dots button.active { background: var(--navy); }
 
-.about { min-height: 1022px; padding-bottom: 80px; background: #061164 url('/assets/live/CAPH-picture.png') center/cover no-repeat; }
-.about-grid { display: block; }
-.about-grid > :first-child { display: none; }
-.about-grid > :last-child { max-width: 650px; margin-left: auto; }
-.about-art { display: none; }
-.about-title { margin: 0 0 27px; color: var(--cloud); font-size: clamp(54px, 7vw, 90px); line-height: .9; }
-.about-title em { color: var(--lime); font-style: normal; }
-.about-copy { margin: 0; color: #d0d6df; font-size: 18px; line-height: 1.62; }
-.about-copy + .about-copy { margin-top: 18px; }
-.about-quote { margin: 0 0 28px; padding-left: 19px; border-left: 2px solid var(--lime); color: var(--cloud); font: 400 28px/1.15 'Fraunces', serif; }
-.about-advantage { display: grid; gap: 3px; margin: 28px 0; color: var(--cloud); font: 400 24px/1.05 'Fraunces', serif; }
-.about-advantage strong { color: var(--lime); font-weight: 400; }
+.about { height: 1022px; min-height: 1022px; padding: 0; background: #061164 url('/assets/live/CAPH-picture.png') center/cover no-repeat; overflow: hidden; }
+.about-section-container { width: 100%; height: 100%; padding: 50px 20px; }
+.about-columns { display: grid; width: min(1225px, 100%); height: 922px; grid-template-columns: 638px 567px; gap: 20px; margin: 0 auto; }
+.about-empty-column { min-width: 0; }
+.about-content { min-width: 0; padding-top: 50px; color: var(--cloud); }
+.about-label { height: 0; overflow: visible; color: #fff; font: 900 128px/0 'DM Sans', sans-serif; }
+.about-fireworks { display: block; width: 303px; height: 100px; margin: 25px 0 30px; object-fit: contain; object-position: left center; }
+.about-heading-spacer { height: 0; margin: 0 0 50px; overflow: visible; color: #fff; font: 600 73px/0 'DM Sans', sans-serif; }
+.about-intro { margin: 0 0 12px; color: #fff; font: 900 24px/33.6px 'DM Sans', sans-serif; }
+.about-biography { margin: 0 0 12px; color: #fff; font: 900 16px/22.4px 'DM Sans', sans-serif; }
+.about-ready { margin: 0 0 12px; color: #fff; font: 400 40px/56px 'Fraunces', serif; }
+.about-changing { position: relative; display: block; width: 306px; height: 40px; margin: 0 0 32px; color: #000; background: #c4ee03; font: 400 24px/40px 'Fraunces', serif; overflow: hidden; perspective: 400px; }
+.about-changing span { position: absolute; inset: 0; display: block; padding: 0 1px; opacity: 0; transform: rotateX(90deg); transform-origin: 0 0; transition: transform 1s ease-out, opacity 1s ease-out; }
+.about-changing span.is-active { opacity: 1; transform: rotateX(0deg); }
+.about-button { display: inline-flex; align-items: center; justify-content: center; width: 545px; max-width: 100%; height: 44px; padding: 14px 24px; border: 1px solid #d6dceb; border-radius: 9999px; color: #fff; background: var(--navy); font: 400 14px/14px 'Inter Tight', sans-serif; letter-spacing: 3px; text-align: center; cursor: pointer; transition: .3s ease-in-out; }
+.about-button:hover { color: var(--navy); background: #fff; }
 
 .clients { min-height: 732px; padding: 70px 0; border-block: 1px solid var(--line); }
 .clients h2 { margin: 0 0 30px; color: var(--cloud); font: 400 22px/1 'Courier Prime', monospace; letter-spacing: .14em; text-align: center; text-transform: uppercase; }
@@ -341,6 +345,17 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 767px) {
+  .about { height: auto; min-height: 0; }
+  .about-section-container { height: auto; padding: 25px 20px; }
+  .about-columns { display: block; width: 100%; height: auto; }
+  .about-empty-column { display: none; }
+  .about-content { padding-top: 0; }
+  .about-fireworks { width: min(303px, 100%); height: auto; min-height: 100px; }
+  .about-intro { font-size: 20px; line-height: 28px; }
+  .about-biography { font-size: 14px; line-height: 19.6px; }
+  .about-ready { font-size: 32px; line-height: 40px; }
+  .about-changing { width: min(306px, 100%); }
+  .about-button { width: 100%; height: auto; min-height: 44px; }
   .speaking-story { height: auto; min-height: 0; }
   .speaking-story-rail { height: auto; padding-bottom: 25px; }
   .from-quiet-logo { margin-top: 125px; }
@@ -394,6 +409,7 @@ a { color: inherit; text-decoration: none; }
   .path-live-content h3 { margin-top: -15px; font-size: 22px; line-height: 26.4px; }
   .path-live-body { font-size: 18px; line-height: 25.2px; }
   .from-quiet-logo { margin-top: 150px; }
+  .about-section-container { padding: 50px 16px; }
   .paths-head h2 { font-size: 55px; }
   .path-card { min-height: 385px; }
   .path-content { padding: 30px 23px 36px; }
