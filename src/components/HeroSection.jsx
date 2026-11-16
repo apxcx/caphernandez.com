@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 export default function HeroSection() {
   return (
     <section className="hero" id="top">
+      <img className="hero-art" src="/assets/drive-images/homepage-hero-image.png" alt="Cap Hernandez speaking on stage" />
       <div className="rail hero-grid">
         <motion.div className="hero-copy" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .75, delay: .12 }}>
           <div className="hero-kicker">Now accepting founders, executives &amp; experts</div>

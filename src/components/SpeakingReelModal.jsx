@@ -25,7 +25,7 @@ export default function SpeakingReelModal() {
         {open && <motion.div className="modal-backdrop" role="dialog" aria-modal="true" aria-label="Cap Hernandez speaking reel" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={(event) => event.target === event.currentTarget && setOpen(false)}>
           <motion.div className="modal-panel reel-modal-card" initial={{ scale: .94, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: .96, y: 12 }} transition={{ duration: .28 }}>
             <button className="modal-close" onClick={() => setOpen(false)} aria-label="Close speaking reel"><X size={18} /></button>
-            <div className="reel-modal-art"><img src="/assets/cap-emblem.png" alt="Cap Hernandez emblem" /><div><div className="eyebrow">Speaking reel</div><h3 className="display">Quiet confidence, in action.</h3><p>See Cap’s storytelling, practical frameworks, and audience-first approach on stage.</p><a className="lime-button" href="https://www.youtube.com/@caphernandez" target="_blank" rel="noreferrer">Watch on YouTube <ArrowUpRight size={16} /></a></div></div>
+            <div className="reel-modal-art"><img src="/assets/drive-images/homepage-caph-picture.png" alt="Cap Hernandez speaking at an event" /><div><div className="eyebrow">Speaking reel</div><h3 className="display">Quiet confidence, in action.</h3><p>See Cap’s storytelling, practical frameworks, and audience-first approach on stage.</p><a className="lime-button" href="https://www.youtube.com/@caphernandez" target="_blank" rel="noreferrer">Watch on YouTube <ArrowUpRight size={16} /></a></div></div>
           </motion.div>
         </motion.div>}
       </AnimatePresence>
