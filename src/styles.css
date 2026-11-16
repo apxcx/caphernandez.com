@@ -103,22 +103,23 @@ a { color: inherit; text-decoration: none; }
 .uncapped-copy strong { font-weight: 600; }
 .uncapped-tag { display: block; margin-top: 30px; font: 700 12px/1.4 'Courier Prime', monospace; letter-spacing: .12em; text-transform: uppercase; }
 
-.reel { position: relative; min-height: 572px; height: 572px; display: grid; place-items: stretch; padding: 0; background: #070b1d url('/assets/live/CAPH-picture.png') center/cover no-repeat; overflow: hidden; }
-.reel-player { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; border: 0; opacity: .42; object-fit: cover; }
-.reel-shade { position: absolute; z-index: 1; inset: 0; background: linear-gradient(90deg, rgba(3,7,22,.68), rgba(3,7,22,.2) 55%, rgba(3,7,22,.58)); pointer-events: none; }
-.reel-wordmark { position: absolute; z-index: 2; inset: 74px 0 auto; display: grid; color: rgba(235,235,235,.72); font-family: 'Inter Tight', sans-serif; font-size: clamp(92px, 10.8vw, 205px); font-weight: 800; letter-spacing: -.07em; line-height: .74; text-align: center; text-transform: uppercase; white-space: nowrap; pointer-events: none; }
-.reel-pause { position: absolute; z-index: 3; top: 154px; left: 50%; display: flex; gap: 5px; transform: translateX(-50%); }
-.reel-pause i { display: block; width: 4px; height: 19px; border-radius: 2px; background: rgba(247,248,242,.78); }
-.reel-card { position: relative; z-index: 3; width: min(1225px, calc(100% - 40px)); height: 100%; margin-inline: auto; }
-.reel-caption { position: absolute; top: 220px; left: 16%; display: grid; gap: 2px; color: var(--cloud); font-style: italic; }
-.reel-caption em { font-size: 16px; line-height: 1; }
-.reel-caption > span { font-size: 17px; line-height: 1.1; }
-.reel-caption h2 { margin: 4px 0 10px; font: 400 clamp(31px, 3vw, 47px)/.95 'Fraunces', serif; letter-spacing: -.04em; }
-.reel-caption h2 strong { color: var(--lime); font-weight: 400; }
-.reel-caption .ghost-button { width: fit-content; padding: 9px 18px; border: 1px solid rgba(247,248,242,.9); border-radius: 999px; color: var(--cloud); font-size: 10px; font-style: normal; letter-spacing: .1em; }
-.reel-button { position: absolute; right: 10%; bottom: 74px; display: inline-flex; align-items: center; gap: 11px; width: auto; height: auto; padding: 0; border: 0; color: var(--lime); background: transparent; font: 700 12px/1 'Courier Prime', monospace; letter-spacing: .28em; transition: transform .25s, color .25s; }
-.reel-button span { display: grid; width: 21px; height: 21px; place-items: center; border: 2px solid var(--lime); border-radius: 50%; font-size: 8px; letter-spacing: 0; }
-.reel-button:hover { color: var(--cloud); background: transparent; transform: translateY(-2px); }
+.reel { position: relative; min-height: 690px; height: 690px; overflow: hidden; background: #0a1530 url('/assets/live/CAP-Books.png') center/cover no-repeat; }
+.reel-background-video { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.reel-video-wrapper { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; aspect-ratio: 16 / 9; transform: translate(-50%, -50%); }
+.reel-player { position: relative; width: 100%; height: 100%; border: 0; pointer-events: none; }
+.reel-overlay { position: absolute; z-index: 1; inset: 0; background: rgba(0,0,0,.54); pointer-events: none; }
+.reel-container { position: relative; z-index: 2; display: flex; flex-direction: column; height: 690px; padding: 0 20px 100px; }
+.reel-columns { display: flex; flex-flow: row nowrap; width: 100%; height: 560px; margin-top: 30px; gap: 20px; }
+.reel-info-column, .reel-control-column { position: relative; display: flex; flex: 0 0 calc(50% - 10px); flex-direction: column; align-items: flex-start; min-width: 0; height: 560px; }
+.reel-info-column { color: var(--cloud); }
+.reel-live-text { width: 100%; margin-top: 300px; color: var(--cloud); font: italic 100 24px/27px 'DM Sans', sans-serif; letter-spacing: .4px; word-spacing: .1px; }
+.reel-live-heading { margin: 0 0 20px; color: var(--cloud); font: 500 50px/50px 'Fraunces', serif; }
+.reel-live-heading span { color: #C8F547; }
+.reel-live-link { display: inline-flex; align-items: center; justify-content: center; width: 261px; height: 44px; padding: 14px 24px; border: 1px solid #d6dceb; border-radius: 9999px; color: var(--cloud); background: #0a1530; font: 400 14px/14px 'Inter Tight', sans-serif; transition: background .2s, color .2s; }
+.reel-live-link:hover { color: var(--navy); background: var(--cloud); }
+.reel-live-button { display: inline-flex; align-items: center; justify-content: center; width: 317px; height: 60px; margin-top: 500px; padding: 14px 24px; border: 1px solid transparent; color: #C4EE03; background: transparent; font: 900 16px/16px 'DM Sans', sans-serif; letter-spacing: 7px; word-spacing: 5px; }
+.reel-live-button:hover { color: #C4EE03; background: transparent; }
+.reel-play-icon { display: grid; width: 30px; height: 30px; margin-left: 4px; margin-right: 15px; place-items: center; color: currentColor; font-size: 11px; letter-spacing: 0; }
 .video-placeholder { aspect-ratio: 16 / 9; display: grid; place-items: center; padding: 30px; background: #0d1a39 url('/assets/live/CAPH-picture.png') center/cover no-repeat; }
 .video-placeholder .eyebrow { padding: 18px 24px; background: rgba(10,21,48,.82); }
 
@@ -314,6 +315,17 @@ a { color: inherit; text-decoration: none; }
   .detail-art-wrap { min-height: 300px; }
 }
 
+@media (max-width: 767px) {
+  .reel { height: auto; min-height: 0; }
+  .reel-background-video { display: none; }
+  .reel-container { height: auto; padding-bottom: 0; }
+  .reel-columns { flex-flow: column; height: auto; }
+  .reel-info-column, .reel-control-column { flex: 0 0 auto; width: 100%; height: auto; }
+  .reel-control-column { padding-left: 0; }
+  .reel-live-text { margin-top: 300px; }
+  .reel-live-button { margin-top: 500px; }
+}
+
 @media (max-width: 560px) {
   .rail { width: calc(100% - 32px); }
   .nav { height: 72px; }
@@ -335,17 +347,9 @@ a { color: inherit; text-decoration: none; }
   .uncapped-copy { max-width: 52%; margin-top: 160px; margin-left: auto; text-align: right; }
   .uncapped { padding: 66px 0 73px; }
   .uncapped-copy { font-size: 19px; }
-  .reel { min-height: 390px; height: 390px; }
-  .reel-player { opacity: .34; }
-  .reel-wordmark { inset: 58px 0 auto; font-size: clamp(51px, 14vw, 75px); line-height: .8; }
-  .reel-pause { top: 113px; }
-  .reel-caption { top: 145px; left: 9%; }
-  .reel-caption em { font-size: 11px; }
-  .reel-caption > span { font-size: 12px; }
-  .reel-caption h2 { margin: 3px 0 8px; font-size: 29px; }
-  .reel-caption .ghost-button { padding: 7px 13px; font-size: 8px; }
-  .reel-button { right: 9%; bottom: 30px; font-size: 9px; letter-spacing: .18em; }
-  .reel-button span { width: 17px; height: 17px; font-size: 7px; }
+  .reel-live-text { margin-top: 330px; }
+  .reel-live-heading { font-size: 38px; line-height: 38px; }
+  .reel-live-button { margin-top: 500px; }
   .paths-head h2 { font-size: 55px; }
   .path-card { min-height: 385px; }
   .path-content { padding: 30px 23px 36px; }
