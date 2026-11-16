@@ -1,5 +1,19 @@
 export function FinalCta() {
-  return <section className="final-cta"><div className="rail final-grid"><div><div className="eyebrow" style={{ color: '#0a1530' }}>LET'S BUILD</div><h2 className="display final-title">Uncap your authority. Become known.</h2></div><div className="final-copy"><p>30-minute strategy call. Zero pressure. Walk away with a clear personal branding plan whether you work with us or not.</p><a className="lime-button" href="#Email">Book your free strategy call</a></div></div></section>
+  return <section className="final-cta" id="Contact">
+    <div className="final-build-container">
+      <div className="final-build-content">
+        <div className="final-build-eyebrow">
+          <span aria-hidden="true" />
+          <h2>LET'S BUILD</h2>
+        </div>
+        <h1 className="final-build-title">Uncap your <span>authority.</span> Become known.</h1>
+        <p className="final-build-copy">30-minute strategy call. Zero pressure. Walk away with a clear personal branding plan whether you work with us or not.</p>
+        <div className="final-build-button-wrap">
+          <a className="final-build-button" href="https://caphernandez.com/contact/">Book your free strategy call</a>
+        </div>
+      </div>
+    </div>
+  </section>
 }
 
 export default function Footer() {
