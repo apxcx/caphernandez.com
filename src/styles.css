@@ -308,17 +308,37 @@ a { color: inherit; text-decoration: none; }
 .final-build-button::after { content: '→'; margin-left: 15px; font-size: 18px; line-height: 1; }
 .final-build-button:hover { color: #c8f547; background: var(--navy); box-shadow: 0 4px 25px #c8f547; }
 
-.footer { min-height: 509px; padding: 57px 0 29px; background: var(--navy-deep); }
-.footer-top { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 56px; }
-.footer-logo { width: 145px; }
-.footer-logo img { display: block; width: 100%; }
-.footer-heading { margin: 0 0 20px; color: var(--lime); font: 400 11px/1 'Courier Prime', monospace; letter-spacing: .16em; text-transform: uppercase; }
-.footer-links { display: grid; gap: 11px; color: #b9c1cc; font-size: 14px; }
-.footer-links a:hover { color: var(--lime); }
-.socials { display: flex; gap: 10px; }
-.socials a { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 50%; color: #b9c1cc; font: 700 11px/1 'Courier Prime', monospace; }
-.socials a:hover { color: var(--navy); border-color: var(--lime); background: var(--lime); }
-.footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; border-top: 1px solid var(--line); color: #758097; font-size: 12px; }
+.footer-main { height: 426px; background: rgb(5, 12, 31); }
+.footer-main-rail { display: grid; width: min(1225px, calc(100% - 40px)); height: 100%; margin-inline: auto; grid-template-columns: 25.47% 66.37%; column-gap: 100px; padding: 100px 0; }
+.footer-brand-column { display: flex; align-items: flex-start; }
+.footer-brand-column a { display: block; width: 300px; margin-top: 25px; }
+.footer-brand-column img { display: block; width: 100%; height: auto; }
+.footer-link-columns { display: grid; grid-template-columns: 222px 332px 159px; gap: 50px; height: 226px; }
+.footer-link-column, .footer-social-column { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+.footer-link-column h2 { width: max-content; margin: 0 0 20px; color: rgb(200, 245, 71); font: 700 20px/28px 'Inter Tight', sans-serif; }
+.footer-link-column nav { display: flex; flex-direction: column; align-items: flex-end; gap: 20px; }
+.footer-link-column nav a { color: #fff; font: 400 14px/19.6px Archivo, sans-serif; transition: color .2s ease; }
+.footer-link-column nav a:hover { color: rgb(200, 245, 71); }
+.live-socials { display: flex; flex-direction: row; gap: 0; }
+.live-social-link { display: grid; place-items: center; width: 29px; height: 29px; padding: 7px; opacity: 1; transition: transform .2s ease, opacity .2s ease; }
+.live-social-link svg { display: block; width: 15px; height: 15px; fill: rgb(200, 245, 71); }
+.live-social-link:hover { transform: scale(1.5); opacity: .8; }
+.footer-legal { height: 83px; background: rgb(5, 12, 31); }
+.footer-legal-rail { width: min(1225px, calc(100% - 40px)); height: 100%; margin-inline: auto; padding: 0 0 37px; }
+.footer-legal-row { display: flex; align-items: flex-start; justify-content: center; gap: 0; padding-top: 20px; color: #fff; font: 400 14px/19.6px 'DM Sans', sans-serif; }
+.footer-legal-row a { padding-inline: 5px; color: #fff; transition: color .2s ease; }
+.footer-legal-row a:hover { color: rgb(200, 245, 71); }
+.credit-pill { position: fixed; z-index: 9999; right: 20px; bottom: 20px; max-width: 25px; overflow: hidden; padding: 10px; border-radius: 30px; background: rgba(0, 26, 26, .1); white-space: nowrap; transition: max-width .4s cubic-bezier(.23,1,.32,1), padding .4s cubic-bezier(.23,1,.32,1), background .4s ease; }
+.credit-pill:hover { max-width: 250px; padding: 10px 20px; background: #333; }
+.credit-pill a { display: flex; align-items: center; color: #fff; font: 400 13px/18.2px Inter, sans-serif; }
+.credit-dot { display: block; flex: 0 0 5px; width: 5px; height: 5px; margin-right: 8px; border-radius: 50%; background: rgb(200, 245, 71); }
+.credit-text { opacity: 0; transform: translateX(10px); transition: opacity .25s ease, transform .4s cubic-bezier(.23,1,.32,1); }
+.credit-pill:hover .credit-text { opacity: 1; transform: translateX(0); }
+
+@media (max-width: 1119px) {
+  .footer-main-rail { column-gap: 15px; }
+  .footer-link-columns { gap: 15px; }
+}
 
 .modal-backdrop { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 24px; background: rgba(2,7,19,.86); backdrop-filter: blur(8px); }
 .modal-panel { position: relative; width: min(950px, 100%); background: var(--navy); box-shadow: 0 20px 80px rgba(0,0,0,.38); }
@@ -380,7 +400,13 @@ a { color: inherit; text-decoration: none; }
   .speaking-story { padding: 0; }
   .client-ticker { grid-template-columns: repeat(3,1fr); }
   .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-main-rail { grid-template-columns: minmax(0, 25.47fr) minmax(0, 66.37fr); column-gap: 15px; }
+  .footer-link-columns { grid-template-columns: minmax(0, 31.37fr) minmax(0, 44.95fr) minmax(0, 23.68fr); gap: 5px; }
   .detail-art-wrap { min-height: 300px; }
+}
+
+@media (max-width: 767px) {
+  .footer-main, .footer-legal { display: none; }
 }
 
 @media (max-width: 767px) {
