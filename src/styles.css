@@ -131,7 +131,7 @@ a { color: inherit; text-decoration: none; }
 .path-live-section { position: relative; display: flex; width: 100%; min-height: 0; overflow: hidden; }
 .path-live-section > * { min-width: 0; }
 .path-one-live { height: 927px; background: url('/assets/live/For-keynote-speaking-2-scaled-e1766396060205.jpg') center/cover no-repeat; }
-.path-one-live::before { position: absolute; inset: 0; background: rgba(0,0,0,.54); content: ''; }
+.path-one-live::before { position: absolute; inset: 0; background: rgba(0,0,0,.54); content: ''; transition: background-color 2200ms ease-in-out; }
 .path-live-overlay { position: absolute; z-index: 0; inset: 0; background: rgba(0,0,0,.0); pointer-events: none; }
 .path-live-empty { position: relative; z-index: 1; width: 50%; }
 .path-live-content { position: relative; z-index: 1; display: flex; width: 50%; flex-direction: column; align-items: flex-start; padding: 128px 100px 100px; color: var(--cloud); background: var(--navy); }
@@ -141,10 +141,10 @@ a { color: inherit; text-decoration: none; }
 .path-live-content h2 { margin: 0 0 20px; color: var(--cloud); font: 500 50px/50px 'Fraunces', serif; }
 .path-live-content h3 { width: 1200px; max-width: 100%; margin: 0 0 32px; color: var(--cloud); font: 400 26px/31.2px 'Fraunces', serif; }
 .path-live-body { margin: 0 0 32px; color: var(--cloud); font: 400 16px/22.4px 'DM Sans', sans-serif; }
-.path-live-button { display: inline-flex; align-items: center; justify-content: center; width: max-content; min-height: 60px; padding: 17px 29px; border-radius: 9999px; color: var(--navy); background: #C4EE03; font: 600 16px/24px 'Inter Tight', sans-serif; transition: transform .3s ease-out, color .2s, background .2s, box-shadow .2s; }
-.path-live-button:hover { color: var(--lime); background: var(--navy); box-shadow: 0 4px 25px 0 var(--lime); transform: translateY(-3px); }
+.path-live-button { display: inline-flex; align-items: center; justify-content: center; width: max-content; min-height: 60px; padding: 17px 29px; border: 1px solid #C4EE03; border-radius: 9999px; color: var(--navy); background: #C4EE03; font: 600 16px/24px 'Inter Tight', sans-serif; transition: transform .3s ease-out, color .3s ease-in-out, background-color .3s ease-in-out, box-shadow .3s ease-in-out; }
+.path-live-button:hover { color: #C4EE03; background: var(--navy); box-shadow: 0 4px 25px 0 #C4EE03; transform: translateY(-3px); }
 .path-two-live { height: 854px; background: url('/assets/live/cap-new-bg.png') center/cover no-repeat; }
-.path-two-live::before { position: absolute; inset: 0; background: rgba(0,0,0,.38); content: ''; }
+.path-two-live::before { position: absolute; inset: 0; background: rgba(0,0,0,.38); content: ''; transition: background-color .3s ease-in-out; }
 .path-two-live .path-live-content { order: 1; }
 .path-two-live .path-live-image { order: 2; }
 .path-three-live { height: 770px; background: var(--navy); }
