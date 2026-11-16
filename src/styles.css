@@ -112,6 +112,7 @@ a { color: inherit; text-decoration: none; }
 .reel-columns { display: flex; flex-flow: row nowrap; width: 100%; height: 560px; margin-top: 30px; gap: 20px; }
 .reel-info-column, .reel-control-column { position: relative; display: flex; flex: 0 0 calc(50% - 10px); flex-direction: column; align-items: flex-start; min-width: 0; height: 560px; }
 .reel-info-column { color: var(--cloud); }
+.reel-control-column { padding-left: 100px; }
 .reel-live-text { width: 100%; margin-top: 300px; color: var(--cloud); font: italic 100 24px/27px 'DM Sans', sans-serif; letter-spacing: .4px; word-spacing: .1px; }
 .reel-live-heading { margin: 0 0 20px; color: var(--cloud); font: 500 50px/50px 'Fraunces', serif; }
 .reel-live-heading span { color: #C8F547; }
