@@ -1,5 +1,4 @@
 import { achievements } from '../data/content'
-import Reveal from './Reveal'
 
 const logoStyles = [
   ['none', 220, 124, 'cover'],
@@ -45,6 +44,15 @@ function ClientLogo({ client }) {
   return <img className="client-logo" src={client.src} alt={client.alt} style={{ maxWidth, objectFit, filter, ...(client.fixedHeight ? { height } : {}) }} />
 }
 
+function AchievementCard({ item, featured = false }) {
+  const [label, title, description] = item
+  return <article className={`achievement-card${featured ? ' achievement-card-featured' : ''}`}>
+    <div className="achievement-label">{label}</div>
+    <h3>{title}</h3>
+    <div className="achievement-description">{description}</div>
+  </article>
+}
+
 export default function CredentialsBar() {
   return <>
     <section className="clients">
@@ -54,6 +62,24 @@ export default function CredentialsBar() {
         <div className="client-grid-final">{finalClients.map((client) => <ClientLogo key={client.src} client={client} />)}</div>
       </div>
     </section>
-    <section className="section achievements"><div className="rail"><Reveal className="achievements-head"><div><div className="eyebrow">Selected achievements</div><h2 className="display">Ranked and trusted by <em>award-giving bodies</em> across the region.</h2></div><p className="achievements-intro">Ranked and trusted by award-giving bodies across the region.</p></Reveal><div className="achievement-grid">{achievements.map((item, index) => <Reveal key={item[1]} delay={(index % 3) * .04}><div className="achievement"><div className="achievement-year">{item[0]}</div><h3 className="achievement-title">{item[1]}</h3><div className="achievement-type">{item[2]}</div></div></Reveal>)}</div></div></section>
+    <section className="achievements" aria-labelledby="selected-achievements-title">
+      <div className="achievements-container">
+        <div className="achievements-head-panel">
+          <div className="achievements-eyebrow"><span className="achievements-divider" aria-hidden="true" /><h2>SELECTED ACHIEVEMENTS</h2></div>
+          <h1 id="selected-achievements-title">Ranked and trusted by <em>award-giving bodies</em> across the region.</h1>
+        </div>
+        <div className="achievement-row achievement-row-one">
+          <AchievementCard item={achievements[0]} featured />
+          <AchievementCard item={achievements[1]} />
+          <AchievementCard item={achievements[2]} />
+        </div>
+        <div className="achievement-row achievement-row-four">
+          {achievements.slice(3, 7).map((item) => <AchievementCard key={item[1]} item={item} />)}
+        </div>
+        <div className="achievement-row achievement-row-two">
+          {achievements.slice(7).map((item) => <AchievementCard key={item[1]} item={item} />)}
+        </div>
+      </div>
+    </section>
   </>
 }

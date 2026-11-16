@@ -19,7 +19,7 @@ export const testimonials = [
 ]
 
 export const achievements = [
-  ['2025 · ASIA', 'Top 10 Personal branding Voices in Asia', 'Regional recognition'], ['2025', 'Top 2 Filipino on LinkedIn', 'Annual ranking'], ['2025 · 2026', 'Top 20 LinkedIn Influencers in the Philippines', 'Two-year recognition'], ['2024', 'Top 31 Filipino on LinkedIn', 'Annual ranking'], ['2023', 'Top 58 Filipino on LinkedIn', 'Annual ranking'], ['2024', 'Top 50 People in Sales', 'Industry list'], ['FOUNDER & PRESIDENT', 'Top 40 Filipino Founders on LinkedIn', 'Community leadership'], ['ONGOING', 'AI Ready ASEAN Master Trainer', 'Regional certification'], ['ACTIVE', 'Canva Ambassador', 'Brand partnership'],
+  ['2025 · Asia', 'Top 10 Personal branding Voices in Asia', 'Regional recognition'], ['2025', 'Top 2 Filipino on LinkedIn', 'Annual ranking'], ['2025 · 2026', 'Top 20 LinkedIn Influencers in the Philippines', 'Two-year recognition'], ['2024', 'Top 31 Filipino on LinkedIn', 'Annual ranking'], ['2023', 'Top 58 Filipino on LinkedIn', 'Annual ranking'], ['2024', 'Top 50 People in Sales', 'Industry list'], ['Founder & President', 'Top 40 Filipino Founders on LinkedIn', 'Community leadership'], ['Ongoing', 'AI Ready ASEAN Master Trainer', 'Regional certification'], ['Active', 'Canva Ambassador', 'Brand partnership'],
 ]
 
 export const posts = [
