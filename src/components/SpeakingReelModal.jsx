@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-const livePlayerSrc = 'https://www.youtube.com/embed/?origin=https%3A%2F%2Fcaphernandez.com&playsinline=0&autoplay=1&controls=0&modestbranding=1&rel=0&mute=1&enablejsapi=1'
+const livePlayerSrc = 'https://www.youtube.com/embed/2Ao1da6oM9Y?origin=https%3A%2F%2Fcaphernandez.com&playsinline=0&autoplay=1&controls=0&modestbranding=1&rel=0&mute=1&enablejsapi=1'
 
 export default function SpeakingReelModal() {
   const [open, setOpen] = useState(false)
