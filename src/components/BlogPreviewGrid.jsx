@@ -1,6 +1,25 @@
 import { posts } from '../data/content'
-import Reveal from './Reveal'
+
+const postMap = Object.fromEntries(posts.map((post) => [post.category, post]))
 
 export default function BlogPreviewGrid() {
-  return <section className="section blog" id="Blog"><div className="rail"><Reveal className="blog-head"><div><div className="eyebrow" style={{ color: '#6c8f00' }}>From the Blog</div><h2 className="display">From the Blog</h2></div><a className="ghost-button" href="#Blog">SEE ALL POSTS</a></Reveal><div className="blog-grid">{posts.map((post, index) => <Reveal key={post.title} delay={index * .06}><a className={`blog-card ${post.accent}`} href="#Blog"><div><div className="blog-card-category">{post.category}</div><h3>{post.title}</h3></div></a></Reveal>)}</div></div></section>
+  const featured = [postMap['NEWS AND EVENTS'], postMap.PODCASTS, postMap.BLOG]
+
+  return <section className="blog" id="Blog">
+    <div className="blog-section-container">
+      <div className="blog-columns">
+        <div className="blog-intro-column">
+          <div className="blog-display">From the <span>Blog</span></div>
+          <a className="blog-see-all" href="#Blog">SEE ALL POSTS</a>
+        </div>
+        <div className="blog-featured-column">
+          {featured.map((post, index) => <article className="blog-featured-item" key={post.title}>
+            <div className={`blog-featured-category${index === 0 ? ' blog-featured-category-first' : ''}`}>{post.category}</div>
+            <div className="blog-featured-title">{post.title}</div>
+            <div className="blog-featured-divider" aria-hidden="true" />
+          </article>)}
+        </div>
+      </div>
+    </div>
+  </section>
 }
