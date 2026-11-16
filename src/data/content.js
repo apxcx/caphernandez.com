@@ -1,10 +1,10 @@
 export const featuredLogos = [
-  { src: '/assets/drive-logos/featured/featured-pga-boys.png', alt: 'PGA Boys Night Out' },
-  { src: '/assets/drive-logos/featured/featured-beyond-the-noise.png', alt: 'Beyond the Noise' },
-  { src: '/assets/drive-logos/featured/featured-the-cmo.png', alt: 'The CMO Network' },
-  { src: '/assets/drive-logos/featured/featured-top-100-filipinos-on-linkedin-2025-1.png', alt: 'Top 100 Filipinos on LinkedIn' },
-  { src: '/assets/drive-logos/featured/featured-new-in-asia.png', alt: 'New In Asia' },
-  { src: '/assets/drive-logos/featured/featured-ca.png', alt: 'CA' },
+  { src: '/assets/live/featured/featured-pga-boys.png', alt: 'PGA Boys Night Out' },
+  { src: '/assets/live/featured/featured-beyond-the-noise.png', alt: 'Beyond the Noise' },
+  { src: '/assets/live/featured/featured-the-cmo.png', alt: 'The CMO Network' },
+  { src: '/assets/live/featured/featured-top-100.png', alt: 'Top 100 Filipinos on LinkedIn' },
+  { src: '/assets/live/featured/featured-new-in-asia.png', alt: 'New In Asia' },
+  { src: '/assets/live/featured/featured-ca.png', alt: 'CA' },
 ]
 
 export const paths = [
