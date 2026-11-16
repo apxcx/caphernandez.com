@@ -40,9 +40,31 @@ function PathContent({ path }) {
   </div>
 }
 
+function BackgroundVideo({ videoId, end }) {
+  const params = new URLSearchParams({
+    autoplay: '1',
+    mute: '1',
+    loop: '1',
+    playlist: videoId,
+    controls: '0',
+    rel: '0',
+    modestbranding: '1',
+    playsinline: '1',
+    iv_load_policy: '3',
+  })
+  if (end) params.set('end', String(end))
+  return <div className="path-background-video" aria-hidden="true">
+    <div className="path-youtube-wrapper">
+      <iframe title="" src={`https://www.youtube.com/embed/${videoId}?${params.toString()}`} allow="autoplay; encrypted-media" tabIndex="-1" />
+    </div>
+  </div>
+}
+
 export default function ThreePathsCards() {
   return <>
     <section id="SpeakingIntro" className="paths-live-intro">
+      <BackgroundVideo videoId="9XCyKtFsYbg" />
+      <div className="paths-live-overlay" />
       <div className="paths-live-intro-copy">
         <div>ONE GOAL. THREE PATHS.</div>
         <p>Which option fits your needs best?</p>
@@ -58,6 +80,8 @@ export default function ThreePathsCards() {
       <div className="path-live-image"><img src={livePaths[1].image} alt="Cap Hernandez workshops" /></div>
     </section>
     <section id="Book" className="path-live-section path-three-live" aria-label="Path Three: Books and Frameworks">
+      <BackgroundVideo videoId="8xFFZdqtrvs" end={7} />
+      <div className="path-three-live-overlay" />
       <div className="path-live-image"><img src={livePaths[2].image} alt="Cap Hernandez books and frameworks" /></div>
       <PathContent path={livePaths[2]} />
     </section>
