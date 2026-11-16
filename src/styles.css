@@ -108,7 +108,7 @@ a { color: inherit; text-decoration: none; }
 .reel-video-wrapper { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; aspect-ratio: 16 / 9; transform: translate(-50%, -50%); }
 .reel-player { position: relative; width: 100%; height: 100%; border: 0; pointer-events: none; }
 .reel-overlay { position: absolute; z-index: 1; inset: 0; background: rgba(0,0,0,.54); pointer-events: none; }
-.reel-container { position: relative; z-index: 2; display: flex; flex-direction: column; height: 690px; padding: 0 20px 100px; }
+.reel-container { position: relative; z-index: 2; display: flex; flex-direction: column; width: min(1225px, calc(100% - 40px)); height: 690px; margin-inline: auto; padding: 0 0 100px; }
 .reel-columns { display: flex; flex-flow: row nowrap; width: 100%; height: 560px; margin-top: 30px; gap: 20px; }
 .reel-info-column, .reel-control-column { position: relative; display: flex; flex: 0 0 calc(50% - 10px); flex-direction: column; align-items: flex-start; min-width: 0; height: 560px; }
 .reel-info-column { color: var(--cloud); }
@@ -281,6 +281,7 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 900px) {
   .rail { width: min(100% - 40px, 680px); }
+  .reel-container { width: min(100% - 40px, 680px); }
   .nav-links, .nav-cta { display: none; }
   .menu-button { display: grid; place-items: center; }
   .hero { min-height: 680px; padding-top: 84px; display: flex; align-items: center; }
@@ -329,6 +330,7 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 560px) {
   .rail { width: calc(100% - 32px); }
+  .reel-container { width: calc(100% - 32px); }
   .nav { height: 72px; }
   .nav-logo { width: 105px; }
   .mobile-drawer { inset: 72px 0 auto; padding-inline: 25px; }
