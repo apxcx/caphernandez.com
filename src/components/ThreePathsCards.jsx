@@ -1,3 +1,24 @@
+import { useEffect, useRef } from 'react'
+
+let youtubeApiPromise
+
+function loadYouTubeApi() {
+  if (window.YT?.Player) return Promise.resolve(window.YT)
+  if (youtubeApiPromise) return youtubeApiPromise
+  youtubeApiPromise = new Promise((resolve) => {
+    const previousReady = window.onYouTubeIframeAPIReady
+    window.onYouTubeIframeAPIReady = () => {
+      previousReady?.()
+      resolve(window.YT)
+    }
+    const script = document.createElement('script')
+    script.src = 'https://www.youtube.com/iframe_api'
+    script.async = true
+    document.head.appendChild(script)
+  })
+  return youtubeApiPromise
+}
+
 const livePaths = [
   {
     className: 'path-one-live',
@@ -41,22 +62,49 @@ function PathContent({ path }) {
 }
 
 function BackgroundVideo({ videoId, end }) {
-  const params = new URLSearchParams({
-    autoplay: '1',
-    mute: '1',
-    loop: '1',
-    playlist: videoId,
-    controls: '0',
-    rel: '0',
-    modestbranding: '1',
-    playsinline: '1',
-    iv_load_policy: '3',
-  })
-  if (end) params.set('end', String(end))
+  const playerRef = useRef(null)
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    let cancelled = false
+    loadYouTubeApi().then((YT) => {
+      if (cancelled || !containerRef.current || !YT?.Player) return
+      playerRef.current = new YT.Player(containerRef.current, {
+        videoId,
+        playerVars: {
+          autoplay: 1,
+          controls: 0,
+          disablekb: 1,
+          fs: 0,
+          loop: 1,
+          modestbranding: 1,
+          playsinline: 1,
+          playlist: videoId,
+          rel: 0,
+          ...(end ? { end } : {}),
+        },
+        events: {
+          onReady: (event) => {
+            event.target.mute()
+            event.target.playVideo()
+          },
+          onStateChange: (event) => {
+            if (end && event.data === YT.PlayerState.ENDED) {
+              event.target.seekTo(0)
+              event.target.playVideo()
+            }
+          },
+        },
+      })
+    })
+    return () => {
+      cancelled = true
+      playerRef.current?.destroy?.()
+    }
+  }, [videoId, end])
+
   return <div className="path-background-video" aria-hidden="true">
-    <div className="path-youtube-wrapper">
-      <iframe title="" src={`https://www.youtube.com/embed/${videoId}?${params.toString()}`} allow="autoplay; encrypted-media" tabIndex="-1" />
-    </div>
+    <div ref={containerRef} className="path-youtube-wrapper" />
   </div>
 }
 
