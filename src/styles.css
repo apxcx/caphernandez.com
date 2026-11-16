@@ -221,11 +221,14 @@ a { color: inherit; text-decoration: none; }
 .about-button { display: inline-flex; align-items: center; justify-content: center; width: 545px; max-width: 100%; height: 44px; padding: 14px 24px; border: 1px solid #d6dceb; border-radius: 9999px; color: #fff; background: var(--navy); font: 400 14px/14px 'Inter Tight', sans-serif; letter-spacing: 3px; text-align: center; cursor: pointer; transition: .3s ease-in-out; }
 .about-button:hover { color: var(--navy); background: #fff; }
 
-.clients { min-height: 732px; padding: 70px 0; border-block: 1px solid var(--line); }
-.clients h2 { margin: 0 0 30px; color: var(--cloud); font: 400 22px/1 'Courier Prime', monospace; letter-spacing: .14em; text-align: center; text-transform: uppercase; }
-.client-ticker { display: grid; grid-template-columns: repeat(6,1fr); align-items: center; gap: 24px; }
-.client-badge { min-height: 52px; display: grid; place-items: center; color: #9fa8b7; font: 700 12px/1.1 'Courier Prime', monospace; letter-spacing: .1em; text-align: center; }
-.client-badge img { display: block; max-width: 100%; max-height: 58px; object-fit: contain; filter: grayscale(1) brightness(2.45); opacity: .84; }
+.clients { height: auto; min-height: 732px; padding: 0; overflow: visible; background: #0a1530; }
+.clients-section-container { display: flex; width: 100%; min-height: 732px; flex-direction: column; align-items: center; padding: 100px 20px; }
+.clients-heading-row { display: flex; align-items: center; justify-content: center; gap: 15px; height: 12px; }
+.clients-heading-row h2 { margin: 0; color: rgb(200,245,71); font: 400 12px/12px 'JetBrains Mono', monospace; letter-spacing: .22em; }
+.clients-divider { display: block; width: 35px; height: 1px; background: rgb(200,245,71); }
+.client-grid { display: grid; width: 100%; max-width: 1225px; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: center; justify-items: center; gap: 50px; margin-top: 50px; }
+.client-logo { display: block; width: auto; max-width: 100%; margin: 0; }
+.client-grid-final { display: flex; align-items: center; justify-content: center; gap: 200px; width: 100%; max-width: 1225px; }
 
 .achievements { min-height: 1436px; background: #0d1a39; }
 .achievements-head { display: grid; grid-template-columns: .85fr 1.15fr; gap: 60px; align-items: end; margin-bottom: 64px; }
@@ -345,6 +348,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 767px) {
+  .clients { display: none; }
   .about { height: auto; min-height: 0; }
   .about-section-container { height: auto; padding: 25px 20px; }
   .about-columns { display: block; width: 100%; height: auto; }
