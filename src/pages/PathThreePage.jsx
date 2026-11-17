@@ -21,13 +21,27 @@ function YouTubeBackground() {
   useEffect(() => {
     let player
     let cancelled = false
+    const sizePlayer = () => {
+      const frame = player?.getIframe?.()
+      const section = mountRef.current?.parentElement
+      if (!frame || !section) return
+      const { width, height } = section.getBoundingClientRect()
+      const videoRatio = 16 / 9
+      const sectionRatio = width / height
+      const videoWidth = sectionRatio > videoRatio ? width : height * videoRatio
+      const videoHeight = sectionRatio > videoRatio ? width / videoRatio : height
+      Object.assign(frame.style, {
+        position: 'absolute', left: '50%', top: '50%', width: `${videoWidth}px`, height: `${videoHeight}px`, transform: 'translate(-50%, -50%)',
+      })
+    }
+    const observer = new ResizeObserver(sizePlayer)
     const createPlayer = () => {
       if (cancelled || !mountRef.current || !window.YT?.Player) return
       player = new window.YT.Player(mountRef.current, {
         videoId: '8xFFZdqtrvs',
         playerVars: { autoplay: 1, controls: 0, loop: 1, playlist: '8xFFZdqtrvs', playsinline: 1, rel: 0, modestbranding: 1, mute: 1 },
         events: {
-          onReady: (event) => { event.target.mute(); event.target.playVideo() },
+          onReady: (event) => { event.target.mute(); event.target.playVideo(); sizePlayer() },
           onStateChange: (event) => {
             if (event.data === window.YT.PlayerState.PLAYING) setPlaying(true)
             if (event.data === window.YT.PlayerState.ENDED) event.target.playVideo()
@@ -46,7 +60,8 @@ function YouTubeBackground() {
       const previousReady = window.onYouTubeIframeAPIReady
       window.onYouTubeIframeAPIReady = () => { previousReady?.(); createPlayer() }
     }
-    return () => { cancelled = true; player?.destroy?.() }
+    if (mountRef.current?.parentElement) observer.observe(mountRef.current.parentElement)
+    return () => { cancelled = true; observer.disconnect(); player?.destroy?.() }
   }, [])
 
   return <div ref={mountRef} className={`path-three-youtube${playing ? ' is-playing' : ''}`} aria-hidden="true" />
