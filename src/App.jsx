@@ -12,9 +12,11 @@ import NewsletterSignup from './components/NewsletterSignup'
 import Footer, { FinalCta } from './components/Footer'
 import PathOnePage from './pages/PathOnePage'
 import PathTwoPage from './pages/PathTwoPage'
+import PathThreePage from './pages/PathThreePage'
 
 export default function App() {
   if (window.location.pathname === '/path-one-keynote-and-speakers' || window.location.pathname === '/path-one-keynote-and-speakers/') return <PathOnePage />
   if (window.location.pathname === '/path-two-workshops' || window.location.pathname === '/path-two-workshops/') return <PathTwoPage />
+  if (window.location.pathname === '/path-three-books-frameworks' || window.location.pathname === '/path-three-books-frameworks/') return <PathThreePage />
   return <><Navbar /><main><HeroSection /><FeaturedIn /><IntrovertValueProp /><SpeakingReelModal /><ThreePathsCards /><TestimonialsSlider /><AboutCapStory /><CredentialsBar /><BlogPreviewGrid /><NewsletterSignup /><FinalCta /></main><Footer /></>
 }

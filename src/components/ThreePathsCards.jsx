@@ -46,7 +46,7 @@ const livePaths = [
     lead: 'Cap offers practical books and frameworks for introverts to strengthen their sales skills, build their personal brand, and embrace continuous improvement.',
     body: 'These resources are designed for groups or individuals to apply immediately, providing clear, actionable steps to communicate effectively, build trust, and achieve meaningful results.',
     cta: 'View books',
-    href: 'https://caphernandez.com/path-three-books-frameworks/',
+    href: '/path-three-books-frameworks/',
     image: '/assets/live/CAP-Books.png',
   },
 ]
