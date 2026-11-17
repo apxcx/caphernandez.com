@@ -27,7 +27,7 @@ const livePaths = [
     lead: 'Drawing from 20+ years of experience in sales and team leadership, Cap delivers customized, practical keynotes that inspire introverts to communicate confidently, sell authentically, and lead without forcing extroversion.',
     body: 'From sales, personal branding, to continuous improvement, audiences gain tangible strategies to build trust, influence effectively, and leverage quiet strengths for real-world results. Each session equips attendees to take action immediately and achieve meaningful outcomes.',
     cta: 'More About Speaking',
-    href: 'https://caphernandez.com/path-one-keynote-and-speakers/',
+    href: '/path-one-keynote-and-speakers/',
   },
   {
     className: 'path-two-live',

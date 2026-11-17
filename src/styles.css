@@ -532,3 +532,35 @@ a { color: inherit; text-decoration: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Dedicated Path One page — matched to the live keynote page */
+.path-one-page { background: var(--navy); }
+.path-one-hero { position: relative; min-height: 1110px; overflow: hidden; color: var(--cloud); background: #071027 url('/assets/live/For-keynote-speaking-2-scaled-e1766396060205.jpg') 43.58% 54.4% / cover no-repeat; text-align: center; }
+.path-one-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.70); }
+.path-one-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; padding: 134px 20px 90px; }
+.path-one-kicker { margin-bottom: 32px; color: var(--cloud); font: 400 24px/1 'DM Sans', sans-serif; }
+.path-one-title { width: 714px; max-width: 100%; margin-bottom: 50px; color: var(--cloud); font: 900 80px/1 'DM Sans', sans-serif; letter-spacing: 3px; }
+.path-one-title span { font-weight: 400; }
+.path-one-lead { width: 950px; max-width: 100%; margin: 0 0 32px; color: var(--cloud); font: 400 24px/1.4 'DM Sans', sans-serif; }
+.path-one-slider-wrap { width: 950px; max-width: 100%; }
+.path-one-slider { width: 100%; padding: 0 44px 46px; }
+.path-one-slide { display: flex; min-height: 280px; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.path-one-slide h2 { margin: 0 0 24px; color: #c4ee03; font: 500 40px/1.12 'Fraunces', serif; }
+.path-one-slide p { margin: 0 0 32px; color: var(--cloud); font: 400 24px/1.4 'DM Sans', sans-serif; }
+.path-one-slider .swiper-button-prev, .path-one-slider .swiper-button-next { color: var(--cloud); }
+.path-one-slider .swiper-button-prev::after, .path-one-slider .swiper-button-next::after { font-size: 22px; }
+.path-one-slider .swiper-pagination-bullet { background: #c4ee03; opacity: .35; }
+.path-one-slider .swiper-pagination-bullet-active { opacity: 1; }
+.path-one-button { display: inline-flex; align-items: center; justify-content: center; min-height: 60px; margin-top: 32px; padding: 17px 29px; border: 1px solid #c4ee03; border-radius: 9999px; color: var(--navy); background: #c4ee03; font: 600 16px/24px 'Inter Tight', sans-serif; transition: transform .3s ease-out, color .3s ease-in-out, background-color .3s ease-in-out, box-shadow .3s ease-in-out; }
+.path-one-button:hover { color: #c4ee03; background: var(--navy); box-shadow: 0 4px 25px 0 #c4ee03; transform: translateY(-3px); }
+@media (max-width: 479px) {
+  .path-one-hero { min-height: 980px; background-position: 27.3% 45%; }
+  .path-one-inner { padding: 112px 20px 60px; }
+  .path-one-kicker { font-size: 25px; }
+  .path-one-title { font-size: 35px; letter-spacing: 1px; margin-bottom: 34px; }
+  .path-one-lead, .path-one-slide p { font-size: 18px; }
+  .path-one-slider { padding-inline: 26px; }
+  .path-one-slide { min-height: 330px; }
+  .path-one-slide h2 { font-size: 35px; }
+  .path-one-button { font-size: 13px; padding-inline: 18px; }
+}
