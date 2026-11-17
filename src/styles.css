@@ -595,8 +595,7 @@ a { color: inherit; text-decoration: none; }
 .path-three-hero { position: relative; min-height: 1180px; overflow: hidden; color: var(--cloud); background: var(--navy); }
 .path-three-background { position: absolute; z-index: 0; inset: 0; overflow: hidden; background: #050b1d url('/assets/live/path-three-video-poster.jpg') center / cover no-repeat; pointer-events: none; }
 .path-three-youtube { position: absolute; inset: 0; }
-.path-three-youtube iframe { position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-width: 177.78vh; min-height: 100vh; border: 0; opacity: 0; transform: translate(-50%, -50%); pointer-events: none; }
-.path-three-youtube.is-playing iframe { opacity: 1; }
+.path-three-youtube iframe { position: absolute; top: 0; left: 50%; width: 177.78%; height: 100%; border: 0; opacity: 0; transform: translateX(-50%); pointer-events: none; }
 .path-three-overlay { position: absolute; z-index: 1; inset: 0; background: rgba(0,0,0,.46); }
 .path-three-inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; padding: 134px 20px 90px; text-align: center; }
 .path-three-kicker { margin-bottom: 32px; padding: 2px 6px; border-radius: 3px; color: #101a1c; background: #d7f555; font: italic 400 24px/1 'DM Sans', sans-serif; }
