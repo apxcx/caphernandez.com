@@ -30,7 +30,7 @@ export default function PathThreePage() {
             <p><b>Cap’s books provide introverts with step-by-step strategies to apply their natural strengths in sales, personal branding, and leadership. Each resource is written to help readers take action immediately, gain confidence, and see tangible results in their professional and personal growth.</b></p>
           </div>
           <div className="path-three-slider-wrap">
-            <Swiper modules={[Navigation, Pagination, Autoplay]} navigation pagination={{ clickable: true }} autoplay={{ delay: 4000, disableOnInteraction: false }} loop className="path-three-slider">
+            <Swiper modules={[Navigation, Pagination, Autoplay]} navigation pagination={{ clickable: true }} autoplay={{ delay: 4000, disableOnInteraction: false }} rewind className="path-three-slider">
               {books.map(([title, body]) => <SwiperSlide key={title}><article className="path-three-slide"><h2>{title}</h2><p>{body}</p></article></SwiperSlide>)}
             </Swiper>
           </div>
