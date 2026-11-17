@@ -15,6 +15,7 @@ const books = [
 ]
 
 function YouTubeBackground() {
+  const wrapRef = useRef(null)
   const mountRef = useRef(null)
   const [playing, setPlaying] = useState(false)
 
@@ -23,9 +24,10 @@ function YouTubeBackground() {
     let cancelled = false
     const sizePlayer = () => {
       const frame = player?.getIframe?.()
-      const section = mountRef.current?.parentElement
+      const section = wrapRef.current?.parentElement
       if (!frame || !section) return
       const { width, height } = section.getBoundingClientRect()
+      if (!width || !height) return
       const videoRatio = 16 / 9
       const sectionRatio = width / height
       const videoWidth = sectionRatio > videoRatio ? width : height * videoRatio
@@ -60,11 +62,11 @@ function YouTubeBackground() {
       const previousReady = window.onYouTubeIframeAPIReady
       window.onYouTubeIframeAPIReady = () => { previousReady?.(); createPlayer() }
     }
-    if (mountRef.current?.parentElement) observer.observe(mountRef.current.parentElement)
+    if (wrapRef.current?.parentElement) observer.observe(wrapRef.current.parentElement)
     return () => { cancelled = true; observer.disconnect(); player?.destroy?.() }
   }, [])
 
-  return <div ref={mountRef} className={`path-three-youtube${playing ? ' is-playing' : ''}`} aria-hidden="true" />
+  return <div ref={wrapRef} className={`path-three-youtube${playing ? ' is-playing' : ''}`} aria-hidden="true"><div ref={mountRef} /></div>
 }
 
 export default function PathThreePage() {
