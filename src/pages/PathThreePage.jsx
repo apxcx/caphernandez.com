@@ -89,7 +89,6 @@ export default function PathThreePage() {
             </Swiper>
           </div>
           <p className="path-three-close"><b>These books and frameworks are ideal for introverts who want practical tools, clear guidance, and strategies that align with their strengths, enabling them to achieve results with confidence and authenticity.</b></p>
-          <a className="path-three-button" href="https://n2.apx.cx/caphernandez-2/books/"><b>VIEW BOOKS</b></a>
         </div>
       </section>
     </main>
