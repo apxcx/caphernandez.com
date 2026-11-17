@@ -5,7 +5,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import Navbar from '../components/Navbar'
-import Footer, { FinalCta } from '../components/Footer'
+import Footer from '../components/Footer'
 
 const books = [
   ['Selling for Introverts: Quick Guide (Ebook)', 'This provides actionable sales techniques that are easy to implement, helping introverts engage clients and close deals without feeling pushy or unnatural.'],
@@ -91,7 +91,6 @@ export default function PathThreePage() {
         </div>
       </section>
     </main>
-    <FinalCta />
     <Footer />
   </>
 }
