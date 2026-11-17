@@ -13,10 +13,12 @@ import Footer, { FinalCta } from './components/Footer'
 import PathOnePage from './pages/PathOnePage'
 import PathTwoPage from './pages/PathTwoPage'
 import PathThreePage from './pages/PathThreePage'
+import ContactPage from './pages/ContactPage'
 
 export default function App() {
   if (window.location.pathname === '/path-one-keynote-and-speakers' || window.location.pathname === '/path-one-keynote-and-speakers/') return <PathOnePage />
   if (window.location.pathname === '/path-two-workshops' || window.location.pathname === '/path-two-workshops/') return <PathTwoPage />
   if (window.location.pathname === '/path-three-books-frameworks' || window.location.pathname === '/path-three-books-frameworks/') return <PathThreePage />
+  if (window.location.pathname === '/contact' || window.location.pathname === '/contact/') return <ContactPage />
   return <><Navbar /><main><HeroSection /><FeaturedIn /><IntrovertValueProp /><SpeakingReelModal /><ThreePathsCards /><TestimonialsSlider /><AboutCapStory /><CredentialsBar /><BlogPreviewGrid /><NewsletterSignup /><FinalCta /></main><Footer /></>
 }

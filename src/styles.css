@@ -294,6 +294,27 @@ a { color: inherit; text-decoration: none; }
 .newsletter-success, .newsletter-error { margin-top: 0; color: #c4ed05; font: 400 14px/19.6px 'Archivo', sans-serif; }
 .newsletter-error { margin-top: 10px; color: #ffb4b4; }
 
+/* Dedicated Contact page — matched to the live contact page */
+.contact-page { background: var(--navy); }
+.contact-hero { background: var(--navy); color: #fff; }
+.contact-hero-container { display: flex; flex-direction: column; align-items: center; padding: 160px 20px; text-align: center; }
+.contact-hero-content { display: flex; width: min(875px, 100%); flex-direction: column; align-items: center; text-align: center; }
+.contact-hero-eyebrow { display: flex; align-items: center; gap: 15px; height: 12px; margin-bottom: 24px; }
+.contact-hero-eyebrow span { width: 35px; height: 1px; background: #c2ee04; }
+.contact-hero-eyebrow h2 { margin: 0; color: #c2ee04; font: 700 12px/12px 'JetBrains Mono', monospace; letter-spacing: 3px; white-space: nowrap; }
+.contact-hero-title { width: 875px; max-width: 100%; margin: 0 0 40px; color: #fff; font: 400 112px/1 'Fraunces', serif; }
+.contact-hero-title span { color: #c8f547; font-style: italic; }
+.contact-hero-copy { width: 537px; max-width: 100%; margin: 0; color: #8b96b3; font: 400 18px/1.55 'Inter Tight', sans-serif; }
+
+@media (max-width: 767px) {
+  .contact-hero-container { padding: 109px 20px 25px; }
+  .contact-hero-title { font-size: 61px; }
+}
+
+@media (max-width: 479px) {
+  .contact-hero-title { font-size: 50px; }
+}
+
 @media (max-width: 1119px) {
   .newsletter { display: none; }
 }
@@ -627,4 +648,18 @@ a { color: inherit; text-decoration: none; }
   .path-three-slide h2 { font-size: 35px; }
   .path-three-slide p, .path-three-close { font-size: 18px; }
   .path-three-button { font-size: 13px; padding-inline: 18px; }
+}
+
+/* Contact page: keep the live desktop layout and stack the signup on smaller screens */
+@media (max-width: 1119px) {
+  .contact-page .newsletter { display: block; }
+  .contact-page .newsletter-section-container { height: auto; min-height: 0; padding: 80px 20px; }
+  .contact-page .newsletter-columns { flex-direction: column; height: auto; gap: 0; }
+  .contact-page .newsletter-empty-column { display: none; }
+  .contact-page .newsletter-content-column { width: 100%; }
+  .contact-page .newsletter-headline { width: 100%; font-size: 26px; line-height: 1.25; }
+  .contact-page .newsletter-copy { width: 100%; }
+  .contact-page .newsletter-form { grid-template-columns: minmax(0, 1fr); }
+  .contact-page .newsletter-submit { width: 100%; }
+  .contact-page .newsletter-overlay { background: rgba(0,0,0,.74); }
 }

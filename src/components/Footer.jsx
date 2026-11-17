@@ -5,7 +5,7 @@ export function FinalCta() {
         <div className="final-build-eyebrow"><span aria-hidden="true" /><h2>LET'S BUILD</h2></div>
         <h1 className="final-build-title">Uncap your <span>authority.</span> Become known.</h1>
         <p className="final-build-copy">30-minute strategy call. Zero pressure. Walk away with a clear personal branding plan whether you work with us or not.</p>
-        <div className="final-build-button-wrap"><a className="final-build-button" href="https://caphernandez.com/contact/">Book your free strategy call</a></div>
+        <div className="final-build-button-wrap"><a className="final-build-button" href="/contact/">Book your free strategy call</a></div>
       </div>
     </div>
   </section>
@@ -27,12 +27,12 @@ function SocialLink({ name, href }) {
 export default function Footer() {
   const speaking = [
     ['SPEAKING TOPICS', '#Speaking'],
-    ['PATH ONE', 'https://caphernandez.com/path-one-keynote-and-speakers/'],
-    ['PATH TWO', 'https://caphernandez.com/path-two-workshops/'],
-    ['PATH THREE', 'https://caphernandez.com/path-three-books-frameworks/']
+    ['PATH ONE', '/path-one-keynote-and-speakers/'],
+    ['PATH TWO', '/path-two-workshops/'],
+    ['PATH THREE', '/path-three-books-frameworks/']
   ]
   const learnMore = [
-    ['ABOUT', '#About'], ['SPEAKING', '#Speaking'], ['WORKSHOP', 'https://caphernandez.com/path-two-workshops/'], ['BLOG', '#'], ['CONTACT', '#Email']
+    ['ABOUT', '/#About'], ['SPEAKING', '/#Speaking'], ['WORKSHOP', '/path-two-workshops/'], ['BLOG', '#'], ['CONTACT', '/contact/']
   ]
   return <>
     <footer className="footer-main">

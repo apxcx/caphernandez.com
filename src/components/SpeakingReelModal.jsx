@@ -30,7 +30,7 @@ export default function SpeakingReelModal() {
           <div className="reel-info-column">
             <div className="reel-live-text"><b>UNCAPPED<br />Keynote Speaker &amp; Expert</b></div>
             <h2 className="reel-live-heading">Watch Cap in <span>Action</span></h2>
-            <a className="reel-live-link" href="https://caphernandez.com/path-one-keynote-and-speakers/">MORE ABOUT SPEAKING</a>
+            <a className="reel-live-link" href="/path-one-keynote-and-speakers/">MORE ABOUT SPEAKING</a>
           </div>
           <div className="reel-control-column">
             <button className="reel-live-button" onClick={() => setOpen(true)} aria-label="Speaking reel"><span className="reel-play-icon" aria-hidden="true">▶</span><span>SPEAKING REEL</span></button>
