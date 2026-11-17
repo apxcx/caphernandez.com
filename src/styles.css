@@ -564,3 +564,27 @@ a { color: inherit; text-decoration: none; }
   .path-one-slide h2 { font-size: 35px; }
   .path-one-button { font-size: 13px; padding-inline: 18px; }
 }
+
+/* Dedicated Path Two page — matched to the live workshops page */
+.path-two-page { background: var(--navy); }
+.path-two-hero { position: relative; min-height: 1070px; overflow: hidden; color: var(--cloud); background: #071027 url('/assets/live/cap-new-bg-1.png') 69.92% 100% / cover no-repeat; }
+.path-two-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.60); }
+.path-two-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; padding: 150px 20px 90px; text-align: center; }
+.path-two-kicker { margin-bottom: 32px; padding: 2px 6px; border-radius: 3px; color: #101a1c; background: #d7f555; font: italic 400 24px/1 'DM Sans', sans-serif; }
+.path-two-inner h1 { width: 714px; max-width: 100%; margin: 0 0 42px; color: var(--cloud); font: 900 80px/1 'DM Sans', sans-serif; letter-spacing: 3px; }
+.path-two-copy { width: 950px; max-width: 100%; align-self: flex-start; text-align: left; }
+.path-two-copy p { margin: 0 0 32px; color: var(--cloud); font: 400 24px/1.4 'DM Sans', sans-serif; }
+.path-two-programs { width: min(2000px, 100%); margin: 28px 0 0; color: #c4ee03; font: 900 30px/1.4 'DM Sans', sans-serif; text-align: center; text-transform: uppercase; }
+.path-two-close { width: min(2000px, 100%); margin: 30px 0 0; color: var(--cloud); font: 400 20px/1.4 'DM Sans', sans-serif; text-align: center; text-transform: uppercase; }
+.path-two-button { display: inline-flex; align-items: center; justify-content: center; min-height: 60px; margin-top: 32px; padding: 17px 29px; border: 1px solid #c4ee03; border-radius: 9999px; color: var(--navy); background: #c4ee03; font: 600 16px/24px 'Inter Tight', sans-serif; transition: transform .3s ease-out, color .3s ease-in-out, background-color .3s ease-in-out, box-shadow .3s ease-in-out; }
+.path-two-button:hover { color: #c4ee03; background: var(--navy); box-shadow: 0 4px 25px 0 #c4ee03; transform: translateY(-3px); }
+@media (max-width: 479px) {
+  .path-two-hero { min-height: 1120px; background-position: 0 0; }
+  .path-two-inner { padding: 112px 14px 60px; }
+  .path-two-kicker { font-size: 25px; }
+  .path-two-inner h1 { font-size: 35px; letter-spacing: 1px; margin-bottom: 34px; }
+  .path-two-copy p { font-size: 18px; }
+  .path-two-programs { font-size: 18px; }
+  .path-two-close { font-size: 18px; }
+  .path-two-button { font-size: 13px; padding-inline: 18px; }
+}

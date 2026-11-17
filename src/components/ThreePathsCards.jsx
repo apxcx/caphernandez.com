@@ -36,7 +36,7 @@ const livePaths = [
     lead: 'Cap delivers highly interactive workshops for groups or individuals to go deeper into sales, personal branding, and continuous improvement.',
     body: <>These transformational sessions create a safe, supportive space for introverts to show up authentically, share their ideas courageously, and build trust in meaningful ways. Participants leave with practical tools to communicate clearly, engage clients effectively, and turn their natural strengths into measurable outcomes.<br /><br />Featured programs include: Selling for Introverts, The Silent Approach, LinkedIn Mastery Workshop, Quiet Confidence: 4-Week Sales Accelerator, Sell By Chat.</>,
     cta: 'More About Workshops',
-    href: 'https://caphernandez.com/path-two-workshops/',
+    href: '/path-two-workshops/',
     image: '/assets/live/cap-new-bg-2-e1766107866991.png',
   },
   {
