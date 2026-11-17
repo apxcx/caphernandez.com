@@ -14,11 +14,13 @@ const books = [
 ]
 
 export default function PathThreePage() {
+  const youtubeOrigin = typeof window !== 'undefined' ? window.location.origin : 'https://caphernandez.com'
+  const youtubeSrc = `https://www.youtube.com/embed/8xFFZdqtrvs?autoplay=1&mute=1&controls=0&loop=1&playlist=8xFFZdqtrvs&playsinline=1&rel=0&modestbranding=1&enablejsapi=1&origin=${encodeURIComponent(youtubeOrigin)}&widget_referrer=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : 'https://caphernandez.com/path-three-books-frameworks/')}`
   return <>
     <Navbar />
     <main className="path-three-page">
       <section className="path-three-hero">
-        <div className="path-three-background"><iframe title="Books and frameworks background video" src="https://www.youtube-nocookie.com/embed/8xFFZdqtrvs?autoplay=1&mute=1&controls=0&loop=1&playlist=8xFFZdqtrvs&playsinline=1&rel=0" allow="autoplay; encrypted-media" /></div>
+        <div className="path-three-background"><iframe title="Books and frameworks background video" src={youtubeSrc} referrerPolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture" /></div>
         <div className="path-three-overlay" />
         <div className="path-three-inner">
           <div className="path-three-kicker"><b>PATH THREE</b></div>
