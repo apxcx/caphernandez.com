@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import { useEffect, useRef, useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -13,14 +14,50 @@ const books = [
   ['UnCapped Potential (eBook)', 'Tools and frameworks to build consistent habits, measure progress, and cultivate personal and team growth over time.'],
 ]
 
+function YouTubeBackground() {
+  const mountRef = useRef(null)
+  const [playing, setPlaying] = useState(false)
+
+  useEffect(() => {
+    let player
+    let cancelled = false
+    const createPlayer = () => {
+      if (cancelled || !mountRef.current || !window.YT?.Player) return
+      player = new window.YT.Player(mountRef.current, {
+        videoId: '8xFFZdqtrvs',
+        playerVars: { autoplay: 1, controls: 0, loop: 1, playlist: '8xFFZdqtrvs', playsinline: 1, rel: 0, modestbranding: 1, mute: 1 },
+        events: {
+          onReady: (event) => { event.target.mute(); event.target.playVideo() },
+          onStateChange: (event) => {
+            if (event.data === window.YT.PlayerState.PLAYING) setPlaying(true)
+            if (event.data === window.YT.PlayerState.ENDED) event.target.playVideo()
+          },
+        },
+      })
+    }
+    if (window.YT?.Player) createPlayer()
+    else {
+      const existing = document.querySelector('script[src="https://www.youtube.com/iframe_api"]')
+      if (!existing) {
+        const script = document.createElement('script')
+        script.src = 'https://www.youtube.com/iframe_api'
+        document.head.appendChild(script)
+      }
+      const previousReady = window.onYouTubeIframeAPIReady
+      window.onYouTubeIframeAPIReady = () => { previousReady?.(); createPlayer() }
+    }
+    return () => { cancelled = true; player?.destroy?.() }
+  }, [])
+
+  return <div ref={mountRef} className={`path-three-youtube${playing ? ' is-playing' : ''}`} aria-hidden="true" />
+}
+
 export default function PathThreePage() {
-  const youtubeOrigin = typeof window !== 'undefined' ? window.location.origin : 'https://caphernandez.com'
-  const youtubeSrc = `https://www.youtube.com/embed/8xFFZdqtrvs?autoplay=1&mute=1&controls=0&loop=1&playlist=8xFFZdqtrvs&playsinline=1&rel=0&modestbranding=1&enablejsapi=1&origin=${encodeURIComponent(youtubeOrigin)}&widget_referrer=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : 'https://caphernandez.com/path-three-books-frameworks/')}`
   return <>
     <Navbar />
     <main className="path-three-page">
       <section className="path-three-hero">
-        <div className="path-three-background"><iframe title="Books and frameworks background video" src={youtubeSrc} referrerPolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture" /></div>
+        <div className="path-three-background"><YouTubeBackground /></div>
         <div className="path-three-overlay" />
         <div className="path-three-inner">
           <div className="path-three-kicker"><b>PATH THREE</b></div>
