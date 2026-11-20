@@ -17,7 +17,7 @@ export default function PathTwoPage() {
           </div>
           <p className="path-two-programs">SELLING FOR INTROVERTS,<br />THE SILENT APPROACH: LINKEDIN MASTERY WORKSHOP,<br />QUIET CONFIDENCE: 4-WEEK SALES ACCELERATOR PROGRAM,<br />SILENT TO SOLD: MASTERING AUTHENTIC CONNECTION AND SALES,<br />AND SELL BY CHAT.</p>
           <p className="path-two-close">Each program is structured to provide step-by-step guidance<br />while encouraging participants to explore their individual strengths and style.</p>
-          <a className="path-two-button" href="#Email"><b>EXPLORE WORKSHOPS</b></a>
+          <a className="path-two-button" href="mailto:cap@uncapped.asia"><b>EXPLORE WORKSHOPS</b></a>
         </div>
       </section>
     </main>

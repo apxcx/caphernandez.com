@@ -86,7 +86,7 @@ export default function TestimonialsSlider() {
           <button ref={nextRef} className="live-next" aria-label="Next slide"><Arrow direction="next" /></button>
         </div>
       </div>
-      <div className="book-cap-cta"><a className="ghost-button" href="/contact/">BOOK CAP FOR YOUR EVENT</a></div>
+      <div className="book-cap-cta"><a className="ghost-button" href="mailto:cap@uncapped.asia">BOOK CAP FOR YOUR EVENT</a></div>
     </div>
   </section>
 }

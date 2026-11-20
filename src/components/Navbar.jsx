@@ -31,14 +31,14 @@ export default function Navbar() {
         <a className="nav-logo" href={isHome ? '#top' : '/'} aria-label="Cap Hernandez home"><img src="/assets/logo-wordmark.png" alt="Cap Hernandez" /></a>
         <nav className="nav-links" aria-label="Primary navigation">
           {navItems.map((item) => <a key={item.href} className="nav-link" href={sectionHref(item.href)}>{item.label}</a>)}
-          <a className="lime-button nav-cta" href="/contact/">Contact</a>
+          <a className="lime-button nav-cta" href="mailto:cap@uncapped.asia">Contact</a>
         </nav>
         <button className="menu-button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen((value) => !value)}>{open ? <X size={18} /> : <Menu size={18} />}</button>
       </div>
     </header>
     <nav className={`mobile-drawer ${open ? 'open' : ''}`} aria-label="Mobile navigation">
       {navItems.map((item) => <a key={item.href} className="nav-link" href={sectionHref(item.href)} onClick={close}>{item.label}</a>)}
-      <a className="lime-button" href="/contact/" onClick={close}>Contact</a>
+      <a className="lime-button" href="mailto:cap@uncapped.asia" onClick={close}>Contact</a>
     </nav>
   </>
 }

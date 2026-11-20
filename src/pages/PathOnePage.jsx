@@ -31,7 +31,7 @@ export default function PathOnePage() {
               {topics.map(([title, body]) => <SwiperSlide key={title}><article className="path-one-slide"><h2>{title}</h2><p>{body}</p></article></SwiperSlide>)}
             </Swiper>
           </div>
-          <a className="path-one-button" href="#Email"><b>BOOK A KEYNOTE / CORPORATE TRAINING</b></a>
+          <a className="path-one-button" href="mailto:cap@uncapped.asia"><b>BOOK A KEYNOTE / CORPORATE TRAINING</b></a>
         </div>
       </section>
     </main>
