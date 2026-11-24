@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -62,7 +63,7 @@ a { color: inherit; text-decoration: none; }
 .hero-art { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; }
 .hero-grid { position: relative; z-index: 1; height: 100%; padding: 0; }
 .hero-copy { position: absolute; top: 196px; left: 28%; max-width: 875px; margin-left: 0; text-align: left; }
-.hero-kicker { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 36px 53%; padding: 9px 13px; border: 1px solid rgba(247,248,242,.27); border-radius: 999px; color: #e9edf2; font: 400 11px/1 var(--font-accent); letter-spacing: .08em; text-transform: uppercase; }
+.hero-kicker { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 36px 53%; padding: 9px 13px; border: 1px solid rgba(247,248,242,.27); border-radius: 999px; color: #f4f4ee; font-family: "JetBrains Mono", "Courier New", monospace; font-size: 12px; font-weight: 400; line-height: 17px; letter-spacing: 1.38px; text-transform: none; }
 .hero-kicker::before { width: 5px; height: 5px; border-radius: 50%; background: var(--lime); content: ''; }
 .hero-title { width: 875px; max-width: 100%; margin: 0 0 35px; color: var(--cloud); font-family: var(--font-display); font-size: clamp(58px, 8.55vw, 110px); font-weight: 400; line-height: 1; font-style: normal; letter-spacing: -0.03em; text-align: right; }
 .hero-title em { color: var(--cloud); font-style: italic; }
@@ -501,7 +502,6 @@ a { color: inherit; text-decoration: none; }
   .hero { min-height: 645px; padding-top: 72px; }
   .hero-art { opacity: .58; object-position: 25% center; }
   .hero-grid { padding-top: 70px; }
-  .hero-kicker { font-size: 9px; }
   .hero-title { font-size: 47px; line-height: 40px; }
   .section { padding: 78px 0; }
   .featured { padding: 28px 0 40px; }
