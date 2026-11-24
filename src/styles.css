@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,9 +6,9 @@
   color: #f7f8f2;
   background: #0a1530;
   font-family: var(--font-body);
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-accent: 'JetBrains Mono', 'Courier New', monospace;
+  --font-display: Georgia, "Times New Roman", Times, serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-accent: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   --navy: #0a1530;
@@ -24,6 +23,9 @@
 html { scroll-behavior: smooth; background: var(--navy); }
 body { margin: 0; min-width: 320px; background: var(--navy); }
 body, button, input { font: inherit; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); }
+p, li, button, input, textarea, select { font-family: var(--font-body); }
+span { font-family: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: var(--lime); color: var(--navy); }
@@ -62,7 +64,7 @@ a { color: inherit; text-decoration: none; }
 .hero-copy { position: absolute; top: 196px; left: 28%; max-width: 875px; margin-left: 0; text-align: left; }
 .hero-kicker { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 36px 53%; padding: 9px 13px; border: 1px solid rgba(247,248,242,.27); border-radius: 999px; color: #e9edf2; font: 400 11px/1 var(--font-accent); letter-spacing: .08em; text-transform: uppercase; }
 .hero-kicker::before { width: 5px; height: 5px; border-radius: 50%; background: var(--lime); content: ''; }
-.hero-title { width: 875px; max-width: 100%; margin: 0 0 35px; color: var(--cloud); font-family: var(--font-display); font-size: clamp(58px, 8.55vw, 110px); font-weight: 400; line-height: 1; font-style: normal; letter-spacing: -.02em; letter-spacing: -0.03em; font-optical-sizing: none; text-align: right; }
+.hero-title { width: 875px; max-width: 100%; margin: 0 0 35px; color: var(--cloud); font-family: var(--font-display); font-size: clamp(58px, 8.55vw, 110px); font-weight: 400; line-height: 1; font-style: normal; letter-spacing: -0.03em; text-align: right; }
 .hero-title em { color: var(--cloud); font-style: italic; }
 .hero-title .hero-italic { color: var(--cloud); font-style: italic; }
 .hero-title span { color: var(--lime); }
