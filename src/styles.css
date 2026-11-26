@@ -786,3 +786,58 @@ img, video { max-width: 100%; }
   .hero-subtitle { margin-bottom: 18px; font-size: 16px; line-height: 24px; }
   .hero-cta { min-height: 52px; }
 }
+
+/* Larger tablet containment: iPad Pro 13 and Surface Pro retain the tablet flow instead of desktop fixed offsets. */
+@media (min-width: 901px) and (max-width: 1119px) {
+  .hero { min-height: 760px; padding-top: 84px; display: flex; align-items: center; }
+  .hero-art { object-position: 26% center; }
+  .hero-grid { height: auto; padding: 84px 0 80px; }
+  .hero-copy { position: static; width: 100%; max-width: 720px; margin-inline: auto; text-align: left; }
+  .hero-kicker { margin: 0 0 28px; }
+  .hero-title { width: 100%; max-width: 100%; margin-bottom: 28px; font-size: clamp(52px, 7vw, 72px); line-height: .96; text-align: left; }
+  .hero-subtitle { width: auto; max-width: 520px; margin: 0 0 25px; text-align: left; }
+  .hero-cta { margin-left: 0; }
+
+  .value-right-head { width: 100%; padding-right: 0; align-items: center; text-align: center; }
+  .value-uncapped { font-size: clamp(56px, 8vw, 80px); }
+  .value-potential-text { font-size: clamp(48px, 6.5vw, 67px); }
+  .value-right-copy { margin-top: 300px; padding: 0 20px; }
+  .value-advantage { font-size: clamp(20px, 2.5vw, 26px); }
+
+  .about { height: auto; min-height: 0; background-position: center top; }
+  .about-section-container { height: auto; padding: 80px 20px; }
+  .about-columns { display: block; width: 100%; height: auto; }
+  .about-empty-column { display: none; }
+  .about-content { width: 100%; max-width: 680px; margin-inline: auto; padding-top: 0; }
+  .about-label { width: 100%; height: auto; font-size: clamp(72px, 15vw, 112px); line-height: .88; white-space: nowrap; overflow: hidden; }
+  .about-fireworks { width: min(303px, 100%); height: auto; min-height: 0; margin: 20px 0; }
+  .about-heading-spacer { width: 100%; height: auto; margin: 0 0 40px; font-size: clamp(52px, 9vw, 73px); line-height: .92; white-space: nowrap; overflow: hidden; }
+
+  .client-grid-final { gap: 60px; max-width: 100%; }
+  .client-grid-final .client-logo { max-width: 100%; }
+  .blog-featured-title { width: 100%; max-width: 100%; }
+
+  .footer-main { height: auto; min-height: 360px; }
+  .footer-main-rail { display: grid; width: calc(100% - 40px); height: auto; grid-template-columns: minmax(200px, .8fr) minmax(0, 1.2fr); column-gap: 24px; padding: 72px 0; }
+  .footer-brand-column a { width: min(260px, 100%); }
+  .footer-link-columns { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; height: auto; }
+  .footer-link-column, .footer-social-column { align-items: flex-start; text-align: left; }
+  .footer-link-column h2 { width: auto; }
+  .footer-link-column nav { align-items: flex-start; gap: 16px; }
+  .footer-social-column { min-width: 0; }
+  .live-socials { flex-wrap: wrap; }
+  .footer-legal { height: auto; }
+  .footer-legal-rail { height: auto; padding-bottom: 28px; }
+  .footer-legal-row { flex-wrap: wrap; justify-content: flex-start; gap: 4px 0; padding-top: 20px; font-size: 12px; line-height: 17px; }
+
+  .path-one-inner, .path-two-inner, .path-three-inner { width: 100%; min-width: 0; box-sizing: border-box; padding-inline: 24px; }
+  .path-one-title, .path-two-inner h1, .path-three-inner h1 { width: min(714px, 100%); max-width: 100%; }
+  .path-one-lead, .path-one-slider-wrap, .path-two-copy, .path-three-slider-wrap { width: 100%; max-width: 100%; }
+  .path-three-intro { width: 100%; max-width: 100%; gap: 32px; }
+  .path-three-intro img { width: min(440px, 46vw); max-width: 100%; object-fit: contain; }
+  .path-three-intro p { min-width: 0; margin-bottom: 0; font-size: 20px; line-height: 1.4; }
+  .path-three-slider { width: 100%; max-width: 100%; padding-inline: 40px; }
+  .path-three-slide { min-width: 0; max-width: 100%; padding-inline: 8px; }
+  .path-three-slide h2, .path-three-slide p { max-width: 100%; overflow-wrap: break-word; }
+  .path-one-slider .swiper-slide:not(.swiper-slide-active), .path-three-slider .swiper-slide:not(.swiper-slide-active) { visibility: hidden; pointer-events: none; }
+}
