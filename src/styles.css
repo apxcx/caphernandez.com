@@ -730,4 +730,16 @@ img, video { max-width: 100%; }
   .path-three-slide h2 { font-size: clamp(28px, 8vw, 35px); line-height: 1.12; }
   .path-one-slider, .path-three-slider { overflow: hidden !important; clip-path: inset(0); }
   .path-one-slider .swiper-slide, .path-three-slider .swiper-slide { overflow: hidden; }
+  .footer-main { display: block; height: auto; }
+  .footer-main-rail { display: grid; width: calc(100% - 32px); height: auto; grid-template-columns: 1fr; gap: 32px; padding: 50px 0 32px; }
+  .footer-brand-column { align-items: center; justify-content: center; }
+  .footer-brand-column a { width: min(240px, 100%); margin-top: 0; }
+  .footer-link-columns { grid-template-columns: 1fr 1fr; gap: 32px 20px; height: auto; }
+  .footer-link-column, .footer-social-column { align-items: flex-start; text-align: left; }
+  .footer-link-column h2 { width: auto; font-size: 16px; line-height: 22px; }
+  .footer-link-column nav { align-items: flex-start; gap: 12px; }
+  .footer-social-column { grid-column: 1 / -1; }
+  .footer-legal { display: block; height: auto; }
+  .footer-legal-rail { width: calc(100% - 32px); height: auto; padding: 0 0 24px; }
+  .footer-legal-row { flex-wrap: wrap; justify-content: flex-start; gap: 4px 0; padding-top: 18px; font-size: 11px; line-height: 16px; }
 }
