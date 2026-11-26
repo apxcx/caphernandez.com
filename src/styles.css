@@ -586,6 +586,9 @@ img, video { max-width: 100%; }
   .newsletter-eyebrow h2, .contact-hero-eyebrow h2, .final-build-eyebrow h2 { letter-spacing: 2px; }
   .detail-hero h1 { font-size: clamp(46px, 14vw, 62px); }
   .detail-hero p { font-size: 17px; }
+  .about-label { width: 100%; height: auto; font-size: clamp(56px, 17vw, 72px); line-height: .88; white-space: nowrap; overflow: hidden; }
+  .about-fireworks { width: min(260px, 100%); height: auto; min-height: 0; margin: 16px 0 14px; }
+  .about-heading-spacer { width: 100%; height: auto; margin: 0 0 28px; font-size: clamp(42px, 13vw, 56px); line-height: .92; white-space: nowrap; overflow: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
